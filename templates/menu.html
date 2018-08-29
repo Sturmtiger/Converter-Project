@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Numeral converter</title>
+	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+<body>
+    <i class="fas fa-exchange-alt"></i>
+
+        <form id='arabic-form' action="/get-roman-number" method="post">
+            <textarea name="arabic" id="ta1" cols="30" rows="10" placeholder="Enter the arabic number to get roman">{% if arabic %}{{ arabic }}{% endif %}</textarea>
+            <br><input class='formsub' type="submit" value="Get roman">
+	    </form>
+
+		<button onclick="location.href = '/'">Сброс</button>
+
+	    <form id='roman-form' action="/get-arabic-number" method="post">
+            <textarea name="roman" id="" cols="30" rows="10" placeholder="Enter the roman number to get arabic">{% if roman %}{{ roman }}{% endif %}</textarea>
+            <br><input class="formsub" type="submit" value="Get arabic">
+        </form>
+
+</body>
+</html>

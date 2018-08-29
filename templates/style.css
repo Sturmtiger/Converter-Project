@@ -1,0 +1,29 @@
+.fas{
+	position: absolute;
+	font-size: 100px;
+	color: #002E98FF;
+	top: 33%;
+	left: 46%;
+}
+#arabic-form, #roman-form{
+    position: absolute;
+
+   }
+#arabic-form{
+	left: 25%;
+	top: 30%;
+}
+
+#roman-form{
+	right: 25%;
+	top: 30%;
+}
+.formsub{
+	position: inherit;
+	left: calc((233px - 79px) / 2)
+}
+textarea{
+	/*background: none;*/
+	border: 2px solid black;
+	resize: none;
+}
