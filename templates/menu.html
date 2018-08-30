@@ -2,24 +2,22 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Numeral converter</title>
+	<title>Calculator</title>
 	<link rel="stylesheet" href="/static/css/style.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 </head>
 <body>
-    <i class="fas fa-exchange-alt"></i>
+    <input type="button" onclick="location.href='/bd-data'" value="Query history" />
+    <i class="fas fa-arrow-circle-right"></i>
 
-        <form id='arabic-form' action="/get-roman-number" method="post">
-            <textarea name="arabic" id="ta1" cols="30" rows="10" placeholder="Enter the arabic number to get roman">{% if arabic %}{{ arabic }}{% endif %}</textarea>
-            <br><input class='formsub' type="submit" value="Get roman">
-	    </form>
+    <form id='input-form' action="/get-converted-number" method="post">
+        <textarea name="number" id="" cols="30" rows="10" placeholder="Enter the Arabic or Roman number to convert">{{ num }}</textarea>
+        <br><input class='formsub' type="submit" value="Convert">
+    </form>
 
-		<button onclick="location.href = '/'">Сброс</button>
-
-	    <form id='roman-form' action="/get-arabic-number" method="post">
-            <textarea name="roman" id="" cols="30" rows="10" placeholder="Enter the roman number to get arabic">{% if roman %}{{ roman }}{% endif %}</textarea>
-            <br><input class="formsub" type="submit" value="Get arabic">
-        </form>
-
+    <form id='output-form' action="/">
+        <textarea disabled id="" cols="30" rows="10">{{ conv_num }}{{ error }}</textarea>
+        <br><input class="formsub" type="submit" value="Reset">
+    </form>
 </body>
 </html>

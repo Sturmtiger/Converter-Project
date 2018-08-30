@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data from SQLite</title>
+</head>
+<body>
+    <input type="button" onclick="location.href='/'" value="Back" />
+    <table border="1"  cellspacing="0" align="center">
+        <tr>
+            <th>Дата операции</th>
+            <th>Исходное число</th>
+            <th>Конвертированное число</th>
+        </tr>
+        {% for date, number, convert_number in data %}
+            <tr>
+                <td>{{ date }}</td>
+                <td>{{ number }}</td>
+                <td>{{ convert_number }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

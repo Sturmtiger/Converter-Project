@@ -1,20 +1,23 @@
-.fas{
+.fas {
 	position: absolute;
 	font-size: 100px;
 	color: #002E98FF;
 	top: 33%;
 	left: 46%;
 }
-#arabic-form, #roman-form{
+.fas:hover{
+    color: #00bc0a;
+}
+#input-form, #output-form{
     position: absolute;
 
    }
-#arabic-form{
+#input-form{
 	left: 25%;
 	top: 30%;
 }
 
-#roman-form{
+#output-form{
 	right: 25%;
 	top: 30%;
 }
@@ -26,3 +29,6 @@ textarea{
 	border: 2px solid black;
 	resize: none;
 }
+/*body {*/
+    /*background-image: url(/static/img/roman.jpg);*/
+/*}*/
