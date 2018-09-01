@@ -17,3 +17,13 @@ def db_read():
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM queries")
     return cursor.fetchall()
+
+
+
+def db_clear():
+    conn = db.connect('database.db')
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM queries")
+    conn.commit()
+    cursor.close()
+    conn.close()

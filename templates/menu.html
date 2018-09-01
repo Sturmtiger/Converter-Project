@@ -7,17 +7,56 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 </head>
 <body>
-    <input type="button" onclick="location.href='/bd-data'" value="Query history" />
-    <i class="fas fa-arrow-circle-right"></i>
+    <div id="header">
+        <h1>Конвертер римских и арабских чисел</h1>
+    </div>
+    <button  id="b-hist" type="button" onclick="location.href='/db-data'">Query history</button>
+    <div id="legend">
+        <div id="legend-in">
+            <h2>Краткое введение</h2>
+            <p>Римляне, как известно, использовали для записи числа латинские буквы. Считается, что римская система
+    счисления является классическим примером непозиционной системы счисления, то есть такой системы
+    счисления, в которой величина (которую обозначает цифра) не зависит от положения в числе.</p>
+        </div>
+    </div>
+    <div id="left-bar">
+         <p>Напомним эквивалентность римских и арабских чисел:</p>
+            <ul>
+                <li>1 — I (лат. unus)</li>
+                <li>5 — V (лат. quinque)</li>
+                <li>10 — X (лат. decem)</li>
+                <li>50 — L (лат. quinquaginta)</li>
+                <li>100 — C (лат. centum)</li>
+                <li>500 — D (лат. quingenti)</li>
+                <li>1000 — M (лат. mille)</li>
+            </ul>
+            <p>0(ноль) в римской системе счисления отсутствует.</p>
+            <p><b style="color: #dc1702">Внимание!</b> Конвертер работает от 1 до 3999, исходя из правил римской системы счисления.</p>
+    </div>
+  <div id="convert-form">
+      <form id='convert-form' action="/get-converted-number" method="post">
+          <textarea name="input" cols="30" rows="10" placeholder="Enter the Arabic or Roman number to convert">{{ num }}</textarea>
+          <i class="fas fa-arrow-circle-right"></i>
+          <textarea cols="30" rows="10" disabled placeholder="Result" readonly>{{ conv_num }}{{ error }}</textarea>
+          <br>
+          <input id="num-form-sub" type="submit" value="Convert">
+          <button  id="b-reset" type="button" onclick="location.href='/'">Reset</button>
+      </form>
+  </div>
 
-    <form id='input-form' action="/get-converted-number" method="post">
-        <textarea name="number" id="" cols="30" rows="10" placeholder="Enter the Arabic or Roman number to convert">{{ num }}</textarea>
-        <br><input class='formsub' type="submit" value="Convert">
-    </form>
 
-    <form id='output-form' action="/">
-        <textarea disabled id="" cols="30" rows="10">{{ conv_num }}{{ error }}</textarea>
-        <br><input class="formsub" type="submit" value="Reset">
-    </form>
+
+
+
+
+
+
+
+{#    <form action="/processjson" enctype="application/json" method="post">#}
+{#   <!-- скрытый параметр -->#}
+{#    <input type="hidden" name="name" value="Bender">#}
+{#    <input type="submit" class="btn btn-dark" value="TEST">#}
+{#     </form>#}
+
 </body>
 </html>

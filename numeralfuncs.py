@@ -30,12 +30,13 @@ def get_arabic(n):
     """
 
     n = n.upper()  # на случай, если пользователь введет числа в нижнем регистре
-    invalid_format = ['IM', 'VM', 'XM', 'LM', 'DM', 'CCM',  # список невалидных комбинаций чисел
-                      'CCD', 'LD', 'XD', 'VD', 'ID',
-                      'LC', 'XXC', 'VC', 'IC',
-                      'XXL', 'VL', 'IL',
+    invalid_format = ['MMMM', 'DD', 'CCCC', 'LL', 'XXXX', 'VV', 'IIII',  # список невалидных комбинаций чисел
+                      'IM', 'VM', 'XM', 'LM', 'DM', 'CCM', 'CMC',
+                      'ID', 'VD', 'XD', 'LD', 'CCD', 'CDC',
+                      'IC', 'VC', 'XXC', 'LC', 'XCX',
+                      'XXL', 'VL', 'IL', 'XLX', 'IXI',
                       'VX', 'IIX',
-                      'MMMM', 'DD', 'CCCC', 'LL', 'XXXX', 'VV', 'IIII']
+                      'IIV', 'IVI']
 
     check_list = ['M', 'D', 'C', 'L', 'X', 'V', 'I']
     # если встречаются посторонние символы или неправильный формат рим. чисел - бросаем ошибку
@@ -55,6 +56,5 @@ def get_arabic(n):
     dboperations.db_write(db_number, result)  # Запись данных в БД
 
     return str(result)
-
 
 

@@ -1,0 +1,6 @@
+Выполнил: Ширяев Максим
+
+Запуск из директории:
+venv\scripts\activate
+export(set) flask_add = app.py
+flask run 

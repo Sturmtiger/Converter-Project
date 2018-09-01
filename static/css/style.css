@@ -1,34 +1,70 @@
-.fas {
-	position: absolute;
-	font-size: 100px;
-	color: #002E98FF;
-	top: 33%;
-	left: 46%;
+body {
+    margin: 0;
+    background-image: url(/static/img/roman.jpg);
+}
+textarea{
+    resize: none;
+    border: 2px solid black;
+}
+
+
+#header {
+    height: 80px;
+    margin-bottom: 20px;
+    background: rgba(185, 87, 34, 0.8);
+    border-bottom: 2px solid black;
+    text-align: center;
+}
+#header h1 {
+    margin: 0;
+    padding: 10px;
+    font-family: Impact;
+    font-size: 50px;
+}
+
+#legend{
+    background: rgba(185, 87, 34, 0.8);
+    margin: 50px;
+    font-family: "Comic Sans MS";
+}
+#legend h2{
+    text-align: center;
+}
+#legend-in{margin: 20px;}
+#left-bar{
+    position: absolute;
+    background: rgba(185, 87, 34, 0.8);
+    width: 250px;
+    padding: 10px;
+}
+#convert-form{
+    width: 700px;
+    position: relative;
+    left: calc(50% - 350px);
+}
+#b-hist, #b-back, #b-clear{
+    position: absolute;
+    height: 80px;
+    width: 100px;
+}
+/*--menu--*/
+#b-hist{
+    top: 0;
+    left: 0;
+}
+/*--db_data--*/
+#b-back{
+    top: 0;
+    left: 0;
+}
+#b-clear{
+    top:0;
+    left: 100px;
+}
+/*----*/
+.fas{
+    font-size: 100px;
 }
 .fas:hover{
     color: #00bc0a;
 }
-#input-form, #output-form{
-    position: absolute;
-
-   }
-#input-form{
-	left: 25%;
-	top: 30%;
-}
-
-#output-form{
-	right: 25%;
-	top: 30%;
-}
-.formsub{
-	position: inherit;
-	left: calc((233px - 79px) / 2)
-}
-textarea{
-	border: 2px solid black;
-	resize: none;
-}
-/*body {*/
-    /*background-image: url(/static/img/roman.jpg);*/
-/*}*/
