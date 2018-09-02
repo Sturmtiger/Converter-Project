@@ -1,6 +1,5 @@
 import sqlite3 as db
 import datetime as dt
-import json
 
 def db_write(num, converted_num):
     conn = db.connect('database.db')

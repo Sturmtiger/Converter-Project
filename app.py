@@ -1,5 +1,5 @@
-from flask import Flask, render_template, request, jsonify
-import numeralfuncs
+from flask import Flask, render_template, request
+from numeralfuncs import get_roman, get_arabic
 from dboperations import db_read, db_clear
 
 
@@ -10,15 +10,15 @@ def menu():
     return render_template('menu.html')
 
 
-@app.route('/get-converted-number', methods=['POST'])
+@app.route('/get-converted-number', methods=['POST']) # конвертация числа
 def convert():
-    num = request.form['input']
+    num = request.form['input'].strip()  # запрос из формы с удалением пробелов
     try:
         if num.isalpha():  # если буквы, конверт. в римские
-            converted_num = numeralfuncs.get_arabic(num)
+            converted_num = get_arabic(num)
             return render_template('menu.html', num=num.upper(), conv_num=converted_num)
         elif num.isdigit():  # если число, конверт. в арабские
-            converted_num = numeralfuncs.get_roman(int(num))
+            converted_num = get_roman(int(num))
             return render_template('menu.html', num=num, conv_num=converted_num)
     except Exception as e:
         # print('ERROR TYPE:', e.__class__.__name__)
@@ -28,27 +28,16 @@ def convert():
         msg = 'Invalid syntax!'
         return render_template('menu.html', error=msg)
 
-@app.route('/db-data')  # лог запросов
+@app.route('/db-data')  # история запросов
 def db_data():
     data = db_read()
     return render_template('db_data.html', data=data)
 
-@app.route('/db-data-cleared')  # очистка лога
+@app.route('/db-data-cleared')  # очистка истории
 def db_data_cleared():
     db_clear()
     return render_template('db_data.html')
 
-
-# @app.route('/processjson', methods=['POST'])
-# def processjson():
-#     print(request.headers['Content-Type'])
-#     return request.headers['Content-Type']
-#     # try:
-#     #     data = request.get_json(force=True)
-#     #     print(data)
-#     #     return jsonify(data)
-#     # except Exception as e:
-#     #     print(e)
 
 if __name__ == '__main__':
     app.run()

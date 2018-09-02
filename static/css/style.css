@@ -5,9 +5,9 @@ body {
 textarea{
     resize: none;
     border: 2px solid black;
+    font-family: sans-serif;
+    width: 235px;
 }
-
-
 #header {
     height: 80px;
     margin-bottom: 20px;
@@ -21,50 +21,62 @@ textarea{
     font-family: Impact;
     font-size: 50px;
 }
-
 #legend{
     background: rgba(185, 87, 34, 0.8);
     margin: 50px;
     font-family: "Comic Sans MS";
 }
-#legend h2{
-    text-align: center;
-}
+#legend h2{text-align: center;}
 #legend-in{margin: 20px;}
 #left-bar{
     position: absolute;
     background: rgba(185, 87, 34, 0.8);
     width: 250px;
     padding: 10px;
+    font-family: "Comic Sans MS";
 }
 #convert-form{
-    width: 700px;
+    /*width: 600px;*/
     position: relative;
-    left: calc(50% - 350px);
+    left: calc(50% - 300px);
+    margin: 100px;
 }
+#convert-form form{
+    margin-left: 10px;
+}
+#num-form-sub, #b-reset{
+    width: 70px;
+    height: 25px;
+}
+#b-reset{
+    position: relative;
+    left: 95px;
+}
+/*buttons*/
 #b-hist, #b-back, #b-clear{
     position: absolute;
     height: 80px;
     width: 100px;
+    top: 0;
 }
 /*--menu--*/
-#b-hist{
-    top: 0;
-    left: 0;
-}
+#b-hist{left: 0;}
 /*--db_data--*/
-#b-back{
-    top: 0;
-    left: 0;
-}
-#b-clear{
-    top:0;
-    left: 100px;
-}
+#b-back{left: 0;}
+#b-clear{left: 100px;}
 /*----*/
 .fas{
     font-size: 100px;
+    position: relative;
+    bottom: 40px;
+    color: blueviolet;
+    background: black;
+    border-radius: 100%;
 }
 .fas:hover{
     color: #00bc0a;
+}
+#bd-table{
+    background: rgba(185, 87, 34, 0.8); font-family: initial;
+    border-color: black;
 }

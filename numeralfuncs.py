@@ -1,4 +1,4 @@
-import dboperations
+from dboperations import db_write
 
 def get_roman(n):
     """
@@ -6,7 +6,7 @@ def get_roman(n):
     Attention! No more than 3999 and not less than 1
     """
 
-    if 1 > n or n > 3999:
+    if not 0 < n < 4000:
         raise SyntaxError('The number is less than 1 or more than 3999')
 
     db_number = n  # входное значение для БД
@@ -18,7 +18,7 @@ def get_roman(n):
         result += n // arabic * roman  # данным алгоритмом мы опредяем сколько рим. чисел нужно внести в result
         n %= arabic  # не забываем вычитать из конвертируемого арабского числа
 
-    dboperations.db_write(db_number, result)  # Запись данных в БД
+    db_write(db_number, result)  # Запись данных в БД
 
     return result
 
@@ -31,11 +31,11 @@ def get_arabic(n):
 
     n = n.upper()  # на случай, если пользователь введет числа в нижнем регистре
     invalid_format = ['MMMM', 'DD', 'CCCC', 'LL', 'XXXX', 'VV', 'IIII',  # список невалидных комбинаций чисел
-                      'IM', 'VM', 'XM', 'LM', 'DM', 'CCM', 'CMC',
+                      'IM', 'VM', 'XM', 'LM', 'DM', 'CCM', 'CMC', 'CMD', 'XCM', 'CMM',
                       'ID', 'VD', 'XD', 'LD', 'CCD', 'CDC',
-                      'IC', 'VC', 'XXC', 'LC', 'XCX',
-                      'XXL', 'VL', 'IL', 'XLX', 'IXI',
-                      'VX', 'IIX',
+                      'IC', 'VC', 'XXC', 'LC', 'XCX', 'XCD', 'XCC',
+                      'XXL', 'VL', 'IL', 'XLX', 'IXI', 'LXL',
+                      'VX', 'IIX', 'IXX',
                       'IIV', 'IVI']
 
     check_list = ['M', 'D', 'C', 'L', 'X', 'V', 'I']
@@ -53,7 +53,7 @@ def get_arabic(n):
             n = n.replace(roman, '', 1)
             result += arabic
 
-    dboperations.db_write(db_number, result)  # Запись данных в БД
+    db_write(db_number, result)  # Запись данных в БД
 
     return str(result)
 

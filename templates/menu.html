@@ -31,10 +31,10 @@
                 <li>1000 — M (лат. mille)</li>
             </ul>
             <p>0(ноль) в римской системе счисления отсутствует.</p>
-            <p><b style="color: #dc1702">Внимание!</b> Конвертер работает от 1 до 3999, исходя из правил римской системы счисления.</p>
+            <p><b style="color: #c90006">Внимание!</b> Конвертер работает от 1 до 3999, исходя из правил римской системы счисления.</p>
     </div>
   <div id="convert-form">
-      <form id='convert-form' action="/get-converted-number" method="post">
+      <form action="/get-converted-number" method="post">
           <textarea name="input" cols="30" rows="10" placeholder="Enter the Arabic or Roman number to convert">{{ num }}</textarea>
           <i class="fas fa-arrow-circle-right"></i>
           <textarea cols="30" rows="10" disabled placeholder="Result" readonly>{{ conv_num }}{{ error }}</textarea>
@@ -43,20 +43,5 @@
           <button  id="b-reset" type="button" onclick="location.href='/'">Reset</button>
       </form>
   </div>
-
-
-
-
-
-
-
-
-
-{#    <form action="/processjson" enctype="application/json" method="post">#}
-{#   <!-- скрытый параметр -->#}
-{#    <input type="hidden" name="name" value="Bender">#}
-{#    <input type="submit" class="btn btn-dark" value="TEST">#}
-{#     </form>#}
-
 </body>
 </html>
