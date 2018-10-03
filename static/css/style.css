@@ -36,13 +36,15 @@ textarea{
     font-family: "Comic Sans MS";
 }
 #convert-form{
-    /*width: 600px;*/
+    display: inline-block;
+    width: 600px;
     position: relative;
     left: calc(50% - 300px);
     margin: 100px;
 }
 #convert-form form{
     margin-left: 10px;
+    width: 600px;
 }
 #num-form-sub, #b-reset{
     width: 70px;
